@@ -18,11 +18,16 @@
         1. import csv module
         2. Creating a csv file 
         3. Using writerow to write rows
+    
+    Version 4 - Saving scriping data as a json file - Notes:
+        1. import json
 '''
 import scrapy
 import os
 import csv
 import re
+import json
+
 # Directory of the actual file
 current_dir = os.path.dirname(__file__)
 url = os.path.join(current_dir,'source-EXPLOIT-DB.html')
@@ -39,27 +44,39 @@ class CveSpider(scrapy.Spider):
             if len(child.xpath('tr'))>100:
                 table = child
                 break
-        
-        #creating a csv file
-        csv_file = open('vulnerabilities.csv','w')
-        writer = csv.writer(csv_file)
-        #wrintng head lable
-        writer.writerow(['exploit_id','cve_id'])
+
+       ### Version 3   
+       ### #creating a csv file
+       ### csv_file = open('vulnerabilities.csv','w')
+       ### writer = csv.writer(csv_file)
+       ### #wrintng head lable
+       ### writer.writerow(['exploit_id','cve_id'])
 
         
-        #Getting the cells
+        #Init variables
         count =0
+        data = {}
+        
+        #Init json file
+        json_file = open('vulnerabilites.json','w')
+
+        #Getting the cells
         for row in table.xpath('//tr'):
             if count > 100: #only some records to save
                 break
-            print(url)#test
             try:
                 exploit_id = row.xpath('td//text()')[0].extract()
                 cve_id = row.xpath('td//text()')[2].extract()
                 if re.match(r'^EXPLOIT', exploit_id, re.IGNORECASE):
                     # writting row
-                    writer.writerow([exploit_id,cve_id])
+                    ### Version 3
+                    ### writer.writerow([exploit_id,cve_id])
+                    data[exploit_id] = cve_id
                     count +=1
             except IndexError:
                 pass
-        csv_file.close()
+        ### Version 3    
+        ### csv_file.close()
+        #Serializing json file          
+        json.dump(data,json_file)
+        json_file.close()
