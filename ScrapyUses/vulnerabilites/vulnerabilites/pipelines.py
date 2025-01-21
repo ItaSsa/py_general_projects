@@ -8,6 +8,6 @@
 from itemadapter import ItemAdapter
 
 
-class VulnerabilitiesPipeline:
+class VulnerabilitesPipeline:
     def process_item(self, item, spider):
         return item

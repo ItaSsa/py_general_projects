@@ -1,4 +1,4 @@
-# Scrapy settings for vulnerabilities project
+# Scrapy settings for vulnerabilites project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,14 +7,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = "vulnerabilities"
+BOT_NAME = "vulnerabilites"
 
-SPIDER_MODULES = ["vulnerabilities.spiders"]
-NEWSPIDER_MODULE = "vulnerabilities.spiders"
+SPIDER_MODULES = ["vulnerabilites.spiders"]
+NEWSPIDER_MODULE = "vulnerabilites.spiders"
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = "vulnerabilities (+http://www.yourdomain.com)"
+#USER_AGENT = "vulnerabilites (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -45,13 +45,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    "vulnerabilities.middlewares.VulnerabilitiesSpiderMiddleware": 543,
+#    "vulnerabilites.middlewares.VulnerabilitesSpiderMiddleware": 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    "vulnerabilities.middlewares.VulnerabilitiesDownloaderMiddleware": 543,
+#    "vulnerabilites.middlewares.VulnerabilitesDownloaderMiddleware": 543,
 #}
 
 # Enable or disable extensions
@@ -63,7 +63,7 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    "vulnerabilities.pipelines.VulnerabilitiesPipeline": 300,
+#    "vulnerabilites.pipelines.VulnerabilitesPipeline": 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
