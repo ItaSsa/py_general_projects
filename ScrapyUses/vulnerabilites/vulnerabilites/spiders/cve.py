@@ -62,3 +62,4 @@ class CveSpider(scrapy.Spider):
                     count +=1
             except IndexError:
                 pass
+        csv_file.close()
